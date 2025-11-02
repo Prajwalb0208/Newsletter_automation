@@ -1,9 +1,9 @@
 name: Claude Code SDK Content Collector
 
 on:
-  # Run every 5 hours
+  # Run every 1 hour
   schedule:
-    - cron: '0 */5 * * *'  # At minute 0 past every 5th hour
+    - cron: '0 */1 * * *'  # At minute 0 past every 1th hour
   
   # Allow manual trigger
   workflow_dispatch:
