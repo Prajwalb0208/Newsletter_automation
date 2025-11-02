@@ -3,7 +3,7 @@ name: Claude Code SDK Content Collector
 on:
   # Run every 10 minutes
   schedule:
-    - cron: '*/10 * * * *'  # Every 10th minute
+    - cron: '* */5 * *'  # Every 10th minute
   # Allow manual trigger
   workflow_dispatch:
     inputs:
