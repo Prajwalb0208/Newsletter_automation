@@ -1,22 +1,19 @@
 name: Claude Code SDK Content Collector
 
 on:
-  # Run every 1 hour
+  # Run every 10 minutes
   schedule:
-    - cron: '0 */1 * * *'  # At minute 0 past every 1th hour
-  
+    - cron: '*/10 * * * *'  # Every 10th minute
   # Allow manual trigger
   workflow_dispatch:
     inputs:
       mode:
         description: 'Collection mode'
         required: true
-        default: 'both'
+        default: 'newsletters'
         type: choice
         options:
           - newsletters
-          - articles
-          - both
 
 jobs:
   collect:
@@ -42,7 +39,7 @@ jobs:
           REDIS_PORT: ${{ secrets.REDIS_PORT }}
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
         run: |
-          python main.py --mode ${{ github.event.inputs.mode || 'both' }}
+          python main.py --mode newsletters
       
       - name: Summary
-        run: echo "Collection completed successfully!"
+        run: echo "Newsletter collection completed successfully!"
