@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(pip install:*)",
+      "Bash(python main.py:*)",
+      "Bash(python verify_redis.py:*)",
+      "Bash(python test_duplicate_prevention.py:*)",
+      "Bash(python display_collection.py:*)",
+      "Bash(python -c \"from redis import Redis; r = Redis(host=''unbiased-mayfly-15818.upstash.io'', port=6379, password=''AT3KAAIncDIzM2NmNDM5MWRhZjQ0NTBmYjY1MjNhYjdkYmUxZjNlOHAyMTU4MTg'', ssl=True, decode_responses=True); urls = r.smembers(''ai-newsletters:urls''); print(f''Total URLs: {len(urls)}''); url = list(urls)[0]; url_hash = abs(hash(url)) % (10**10); print(f''Sample URL: {url}''); print(f''Hash: {url_hash}''); print(f''Keys: {r.keys(\"\"*metadata*\"\")[:5]}'')\")",
+      "Bash(python:*)",
+      "Bash(dir /b E:Nov2025_ProjectsSubagent_newsletter*.py)",
+      "Bash(echo:*)",
+      "Bash(\"E:\\Nov2025_Projects\\Subagent_newsletter\\.env.example\")",
+      "Bash(del /q \"E:\\Nov2025_Projects\\Subagent_newsletter\\*.py\")",
+      "Bash(rm:*)",
+      "Bash(dir:*)",
+      "Bash(if [ ! -f \"E:\\Nov2025_Projects\\Subagent_newsletter\\.env.example\" ])",
+      "Bash(then echo \"File does not exist\")",
+      "Bash(fi)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
